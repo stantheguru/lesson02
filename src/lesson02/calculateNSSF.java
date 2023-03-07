@@ -10,6 +10,10 @@ public class calculateNSSF {
 		//Convert entered value to float and call function
 		float scannerValue = Float.parseFloat(scanner.nextLine());
 		getRate(scannerValue);
+		
+		//Object of NHIF Class
+		calculateNHIF nhif = new calculateNHIF();
+		nhif.getNHIF(scannerValue);
 
 	}
 	
