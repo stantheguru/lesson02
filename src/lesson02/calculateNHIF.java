@@ -6,6 +6,23 @@ public class calculateNHIF {
 	public static float getNHIF(float grossPay) {
 		float NHIFAmount = 0.0f;
 		
+		if(grossPay<=6000.0f) {
+			NHIFAmount = 150.0f;
+			
+		//AND OR
+		// IF -- WHILE -- FOR -- DO WHILE
+		}else if(grossPay>6000.0f && grossPay<=8000.0f) {
+			NHIFAmount = 300.0f;
+		}else {
+			NHIFAmount = 1700.0f;
+		}
+		
+		//for loop
+		for(int i = 1;i<=10;i++) {
+			System.out.println(i);
+		}
+		
+		/*	
 		LinkedHashMap<Float, Float> NHIFRates = new LinkedHashMap<Float, Float>();
 		NHIFRates.put(6000.0f, 150.0f);
 		NHIFRates.put(8000.0f, 300.0f);
@@ -25,11 +42,20 @@ public class calculateNHIF {
 		NHIFRates.put(100000.0f, 1600.0f);
 		NHIFRates.put(1000000.0f, 1700.0f);
 		
+		
+		Set<Float> keys = NHIFRates.keySet();
 		for(float upperValue: NHIFRates.keySet()) {
 			if(grossPay < upperValue) {
-				NHIFAmount = NHIFRates.get(upperValue);
+				List<Float> listKeys = new ArrayList<Float>(keys);
+				
+				int index = listKeys.indexOf(upperValue);
+				float amount  = listKeys.get(index-1);
+				System.out.println(upperValue);
+				NHIFAmount = NHIFRates.get(amount);
+				break;
 			}
 		}
+		*/
 		System.out.println("NHIF Amount for Gross Pay KES"+grossPay+" is KES"+ NHIFAmount);
 
 		return NHIFAmount;
